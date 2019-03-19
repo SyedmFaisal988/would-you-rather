@@ -16,11 +16,6 @@ function UserReducer(state={
             case UserActions.SET_USER:
             return {
                 currentUser: action.data,
-                errors: {
-                    hasError: false,
-                    errorObj:{},
-                    serverError: null,
-                },
             };
             default: 
             return state;

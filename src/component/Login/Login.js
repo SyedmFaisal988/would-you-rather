@@ -26,10 +26,9 @@ class Login extends Component {
         const currentUser = users.filter((user)=>{return user.username===userName&&user.password===passWord});
         if(currentUser.length){
             //localStorage.setItem("currentUser", JSON.stringify(currentUser[0]));
-            console.log('hello ', currentUser)
             this.props.setUser(currentUser);
             if(routeTo===undefined){
-                this.props.history.push("/dashboard");
+                this.props.history.push("/");
             }else{
                 this.props.history.push(routeTo);
             }
@@ -43,11 +42,8 @@ class Login extends Component {
     }
     componentDidMount() {
         this.props.getAllUser();
-         console.log('state ', this.state);
-         console.log('props ', this.props);
     }
     static getDerivedStateFromProps(nextProps, prevState) {
-        console.log('next state ',nextProps);
         return{
             users: nextProps.users
         }
