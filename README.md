@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<<<<<<< HEAD
+This is litle game application, using React and Redux.
 
 ## Available Scripts
 
@@ -66,3 +67,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+=======
+# would-you-rather
+>>>>>>> 9c884d70348cca1274f2d594f04a3b6709ec077b
