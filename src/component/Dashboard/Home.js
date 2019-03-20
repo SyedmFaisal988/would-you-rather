@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import UserActions from '../../store/Actions/UserActions';
 import './Home.css';
 import M from 'materialize-css';
+import Questions from './Questions';
 class Dashboard extends Component {
     state = {
         changeStatus: true,
@@ -17,11 +18,11 @@ class Dashboard extends Component {
     }
     componentDidMount() {
         var instance = M.Tabs.init(document.querySelectorAll('.tabs'), {
-            swipeable: true
-        },1);
+        },0);
 
-        //this.props.getUser();
+        this.props.getUser();
         console.log('mount');
+        console.log('user', this.props.currentUser)
     }
     componentWillUnmount() {
         console.log('unmount');
@@ -30,15 +31,16 @@ class Dashboard extends Component {
         console.log('rendering')
         return (
             <div className="home-container" >
-                <div className="home-wrapper" >
-                    <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width tab-demo z-depth-1">
-                        <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
-                        <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
+                <div className="home-wrapper z-depth-5" >
+                    <ul id="tabs-swipe-demo" className="tabs tabs-fixed-width tab-demo z-depth-1">
+                        <li className="tab col s3"><a href="#test-swipe-1">Unanswered Question</a></li>
+                        <li className="tab col s3"><a className="active" href="#test-swipe-2">Answered Question</a></li>
                     </ul>
-                    <div id="test-swipe-1" class="col s12 blue">Test 1</div>
-                    <div id="test-swipe-2" class="col s12 red">Test 2</div>
+                    <div style={{height: 'auto',display: 'block'}} id="test-swipe-1" className="col s12">
+                        <Questions />
+                    </div>
+                    <div id="test-swipe-2" className="col s12">Test 2</div>
                 </div>
-            <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-375-456327.png"></img>
             </div>
             );
     }
