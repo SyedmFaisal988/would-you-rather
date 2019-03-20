@@ -1,0 +1,11 @@
+.home-container{
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-wrapper{
+    border: 1px solid yellow;
+    width: 50%;
+    height: 90vh;
+}

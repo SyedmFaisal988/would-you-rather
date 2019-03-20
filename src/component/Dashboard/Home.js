@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import UserActions from '../../store/Actions/UserActions';
-import Navbar from '../Navbar/Navbar';
+import './Home.css';
 class Dashboard extends Component {
-
+    state = {
+        changeStatus: true,
+    }
     // static getDerivedStateFromProps(nextProps, prevState) {
     //     console.log('next prop ',nextProps);
     //     return nextProps;
@@ -14,8 +16,14 @@ class Dashboard extends Component {
     }
     render() { 
         return (
-            <div>
-                <Navbar name={this.props.currentUser[0].username} />
+            <div className="home-container" >
+                <div className="home-wrapper" >
+                <ul id="tabs-swipe-demo" className="tabs tabs-fixed-width ">
+                    <li className="tab col s3"><a onClick={this.changeStatus} className={this.state.status?"active":""} href="#" >Library</a></li>
+                    <li className="tab col s3"><a onClick={this.changeStatus} className={this.state.status?"":"active"} href="#" >My Reads</a></li>
+                </ul>
+                
+                </div>
             </div>
             );
     }
