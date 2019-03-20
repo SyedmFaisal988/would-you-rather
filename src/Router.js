@@ -33,7 +33,6 @@ class Router  extends Component {
 }
 
 const PrviateRoute = ({ component: Component,currentUser,...rest})=>{
-    console.log(currentUser)
     if(currentUser!==null && currentUser!==undefined){
         return <Route render={()=> <Component/>} />
     }else{
