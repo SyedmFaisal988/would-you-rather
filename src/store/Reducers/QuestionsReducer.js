@@ -1,5 +1,6 @@
 import QuestionsAction from '../Actions/QuestionsActions';
 function QuestionsReducer(state={
+    currentQuestion:{},  
     questions: {
         "8xf0y6ziyjabvozdd253nd": {
           id: '8xf0y6ziyjabvozdd253nd',
@@ -84,6 +85,15 @@ function QuestionsReducer(state={
     switch(action.type){
         case QuestionsAction.GET_QUESTIONS:
         return state;
+        case QuestionsAction.CURRENT_GET:
+        return {
+          currentQuestion: state.currentQuestion,
+        }
+        case QuestionsAction.CURRENT_SET:
+        return{
+          ...state,
+          currentQuestion: action.data,
+        }
         default:
         return state;
     }

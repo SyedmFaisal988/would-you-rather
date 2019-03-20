@@ -7,6 +7,7 @@ import Home from './component/Dashboard/Home';
 import Navbar from './component/Navbar/Navbar';
 import NewQuestion from './component/Dashboard/NewQuestion';
 import LeaderBoard from './component/Dashboard/LeaderBoard';
+import Details from './component/Dashboard/Details';
 
 class Router  extends Component {
     state = {
@@ -26,6 +27,7 @@ class Router  extends Component {
                     <PrviateRoute exact path="/" currentUser={this.state.currentUser} component={Home} />
                     <PrviateRoute exact path="/newquestion" currentUser={this.state.currentUser}  component={NewQuestion} />
                     <PrviateRoute exact path="/leaderboard" currentUser={this.state.currentUser}  component={LeaderBoard} />
+                    <PrviateRoute exact path="/details" currentUser={this.state.currentUser}  component={Details} />
                 </Switch>
             </BrowserRouter>
           );
