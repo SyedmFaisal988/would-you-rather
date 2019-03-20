@@ -39,10 +39,8 @@ function AllUserReducer(state={
         }
     ],
 }, action){
-    console.log(action)
     switch(action.type){
         case AllUserActions.GET_ALL_USER:
-        console.log('ye tu chala')
         return state;
         case AllUserActions.GET_ALL_USER_AVATAR:
         var usersAvatar = {};
@@ -50,9 +48,9 @@ function AllUserReducer(state={
           usersAvatar={
             ...usersAvatar,
             [user.id]: user.avatarURL, 
+            [user.id+"1"]: user.username,
           }
         }
-        console.log('all user avatar ', usersAvatar)
         return{
           ...state,
           usersAvatar,

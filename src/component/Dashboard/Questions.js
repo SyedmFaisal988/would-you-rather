@@ -14,7 +14,6 @@ class Questions extends Component {
         
     }
     componentDidMount() {
-        console.log('props ',this.props)
         this.props.getAllUserAvatar();
         this.setState({
             currentUser: this.props.currentUser,
@@ -22,22 +21,21 @@ class Questions extends Component {
     }
     render() { 
         const questions = this.props.allQuestions;
-        //var quest = Array.from(questions);
-        var quest = [];
-        if(this.props.usersAvatar!==undefined )
+        var metaData = [];
+        if(this.props.usersAvatar!==undefined)
         for(var question in questions){
-            console.log('URl ', questions[question].author)
-            quest.push({
-                name: questions[question].author,
+            if(questions[question].optionOne.votes.indexOf(this.state.currentUser[0].id)<0 && questions[question].optionTwo.votes.indexOf(this.state.currentUser[0].id)<0)
+            metaData.push({
+                name: this.props.usersAvatar[questions[question].author+"1"],
                 avatarURL: this.props.usersAvatar[questions[question].author],    
                 key: question,
+                quest: questions[question],
             });
         }
-        console.log(quest)
         return (    
             <div >
                 {
-                    quest.length>0?quest.map(ques=><Question key={ques.key} name={ques.name} avatarURL={ques.avatarURL} />):<p>Null th</p>
+                    metaData.length>0?metaData.map(ques=><Question key={ques.key} quest={ques.quest} name={ques.name} avatarURL={ques.avatarURL} />):<p>Null th</p>
                 }
             </div>
         );

@@ -4,7 +4,6 @@ import './Question.css';
 class Question extends Component {
     state = {  }
     render() { 
-        console.log('question say',this.props)
         const data = this.props;
         return (
             <div className="quest">

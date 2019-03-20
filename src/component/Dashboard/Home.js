@@ -8,27 +8,13 @@ class Dashboard extends Component {
     state = {
         changeStatus: true,
     }
-    // static getDerivedStateFromProps(nextProps, prevState) {
-    //     console.log('next prop ',nextProps);
-    //     return nextProps;
-    // }
-    //WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
-    componentWillUpdate(nextProps, nextState) {
-        console.log('update')
-    }
     componentDidMount() {
         var instance = M.Tabs.init(document.querySelectorAll('.tabs'), {
         },0);
 
         this.props.getUser();
-        console.log('mount');
-        console.log('user', this.props.currentUser)
-    }
-    componentWillUnmount() {
-        console.log('unmount');
     }
     render() { 
-        console.log('rendering')
         return (
             <div className="home-container" >
                 <div className="home-wrapper z-depth-5" >

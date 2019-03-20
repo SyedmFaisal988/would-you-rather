@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar(props){
-    console.log('navbar', props)
     const logoutHandler = ()=>{
         props.setUser(null);
     }
