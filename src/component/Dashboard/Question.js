@@ -40,8 +40,8 @@ class Question extends Component {
                         {
                             this.props.status ? <Link to={"/question/:" + this.props.quest.id} onClick={() => this.props.setCurrent(this.props.quest)} className="poll waves-effect waves-light btn">View Poll</Link> :
                                 <div >
-                                    <a style={{width:'100%'}} className=" waves-effect waves-light btn modal-trigger" href="#modal1">View Poll</a>
-                                    <div id="modal1" className="modal">
+                                    <a style={{width:'100%'}} className=" waves-effect waves-light btn modal-trigger" href={"#"+this.props.quest.id}>View Poll</a>
+                                    <div id={this.props.quest.id} className="modal">
                                         <div className="modal-content">
                                             <h4>Already Answered</h4>
                                             <p>Look's like you already Answered this question,Click Agree to see Poll Result</p>
