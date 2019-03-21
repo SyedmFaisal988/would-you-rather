@@ -95,8 +95,29 @@ function QuestionsReducer(state={
           currentQuestion: action.data,
         }
         case QuestionsAction.ADD_ANSWER:
-        console.log('reducer ',state.questions[action.data.id][action.data.option]);
-        state.questions[action.data.id][action.data.option].votes.push(action.data.author);
+          console.log('reducer ',state.questions[action.data.id][action.data.option]);
+          state.questions[action.data.id][action.data.option].votes.push(action.data.author);
+        return state;
+        case QuestionsAction.ADD_QUESTION:
+          const UID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+          const format = {
+            id: UID,
+            timestamp: Date.now(),
+            author: action.data.author,
+            optionOne: {
+              votes: [],
+              text: action.data.would,
+            },
+            optionTwo: {
+              votes: [],
+              text: action.data.rather,
+            }
+          }
+          const temp = state.questions;
+          state.questions = {
+            ...temp,
+            [UID]: format,
+          }
         return state;
         default:
         return state;

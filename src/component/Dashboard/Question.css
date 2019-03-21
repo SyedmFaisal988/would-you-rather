@@ -4,16 +4,19 @@
     margin: 10px;
 }
 .author-pic{
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background-size: contain;
+    background-repeat: no-repeat;
     float: left;
+    margin-left: 20px;
 }
 .question-header{
     text-align: left;
     font-size: 20px;
     padding: 3px;
     padding-left: 7px
+
 }
 .question-body{
     display: flex
@@ -23,10 +26,7 @@
 
 }
 .question{
-     display: flexbox;
-    /*width: 75%; */
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-
+    width: 65%;
+    text-align: left;
+    margin-left: 30px;
 }

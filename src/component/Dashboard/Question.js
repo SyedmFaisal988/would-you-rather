@@ -24,7 +24,7 @@ class Question extends Component {
     componentDidMount() {
         document.addEventListener('DOMContentLoaded', this.ModelEve());
     }
-    render() { 
+    render() {
         const data = this.props;
         // console.log('props ', this.props);
         return (
@@ -34,11 +34,11 @@ class Question extends Component {
                     <div style={{backgroundImage: 'url("'+ data.avatarURL+'")'}} className="author-pic">
                     </div>
                     <div className="question">
-                    <strong>Would you Rather</strong>
-                    <br/>
-                    <br/>
+                    <h3>Would you Rather</h3>
+                    <p>{this.props.quest.optionOne.text}</p>
+                    <p>{this.props.quest.optionTwo.text}</p>
                         {
-                            this.props.status ? <Link to={"/question/:" + this.props.quest.id} onClick={() => this.props.setCurrent(this.props.quest)} className="poll waves-effect waves-light btn">View Poll</Link> :
+                            this.props.status ? <Link  to={"/question/:" + this.props.quest.id} onClick={() => this.props.setCurrent(this.props.quest)} className="poll waves-effect waves-light btn right">View Poll</Link> :
                                 <div >
                                     <a style={{width:'100%'}} className=" waves-effect waves-light btn modal-trigger" href={"#"+this.props.quest.id}>View Poll</a>
                                     <div id={this.props.quest.id} className="modal">
@@ -55,6 +55,8 @@ class Question extends Component {
                         }
                     </div>
                 </div>
+                <br></br>
+                
             </div>
         );
     }

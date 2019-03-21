@@ -22,7 +22,6 @@ class Dashboard extends Component {
         this.setState({
             currentUser: this.props.currentUser,
         })
-        console.log(this.props)
     }
     render() { 
         const questions = this.props.allQuestions;

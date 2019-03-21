@@ -30,10 +30,9 @@ class Details extends Component {
         this.props.history.push('/result');
     }
     render() { 
-        console.log('details ', this.props)
         return (
             <div className="answ z-depth-5">
-                <div className="answ-header grey lighten-2">{this.props.question.author} ask</div>
+                <div className="answ-header grey lighten-2">{this.props.usersAvatar[this.props.question.author+"1"]} ask</div>
                 <div className="answ-body">
                     <div style={{backgroundImage: 'url("' + this.props.usersAvatar[this.props.question.author] + '")' }} className="answ-author-pic">
                     </div>

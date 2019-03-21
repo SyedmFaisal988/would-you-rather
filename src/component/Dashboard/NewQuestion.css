@@ -1,0 +1,38 @@
+.new-container{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.new-align{
+    margin-left: 10px;
+}
+
+.new-wrapper{
+    border: 2px solid #e0e0e0;
+}
+
+.new-body>.row{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.new-btn{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.new-header>h2{
+    font-family: Times,'Times New Roman', serif;
+    color: gray;
+}
+.new-header{
+    padding-right: 80px;
+    padding-left: 80px;
+    border-bottom: 2px solid #e0e0e0;
+}
+.new-body{
+    text-align: left;
+}
