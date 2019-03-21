@@ -19,14 +19,15 @@ class Dashboard extends Component {
         this.setState({
             currentUser: this.props.currentUser,
         })
+        console.log(this.props)
     }
     render() { 
         const questions = this.props.allQuestions;
         var unAnsData = [];
         var AnsData = [];
-        if(this.props.usersAvatar!==undefined)
+        if(this.props.usersAvatar!==undefined && questions!==null)
         for(var question in questions){
-            if(questions[question].optionOne.votes.indexOf(this.state.currentUser[0].id)<0 && questions[question].optionTwo.votes.indexOf(this.state.currentUser[0].id)<0)
+            if(questions[question].optionOne.votes.indexOf(this.props.currentUser[0].id)<0 && questions[question].optionTwo.votes.indexOf(this.props.currentUser[0].id)<0)
             unAnsData.push({
                 name: this.props.usersAvatar[questions[question].author+"1"],
                 avatarURL: this.props.usersAvatar[questions[question].author],    
@@ -49,10 +50,10 @@ class Dashboard extends Component {
                         <li className="tab col s3"><a className="active" href="#test-swipe-2">Answered Question</a></li>
                     </ul>
                     <div style={{height: 'auto',display: 'block'}} id="test-swipe-1" className="col s12">
-                        {unAnsData.length>0?unAnsData.map(ques=><Question key={ques.key} quest={ques.quest} name={ques.name} avatarURL={ques.avatarURL} />):<p>Null th</p>}
+                        {unAnsData.length>0?unAnsData.map(ques=><Question status={true} key={ques.key} quest={ques.quest} name={ques.name} avatarURL={ques.avatarURL} />):<p>Null th</p>}
                     </div>
                     <div id="test-swipe-2" className="col s12">
-                        {AnsData.length>0?AnsData.map(ques=><Question key={ques.key} quest={ques.quest} name={ques.name} avatarURL={ques.avatarURL} />):<p>Null th</p>}
+                        {AnsData.length>0?AnsData.map(ques=><Question history={this.props.history} status={false} key={ques.key} quest={ques.quest} name={ques.name} avatarURL={ques.avatarURL} />):<p>Null th</p>}
                     </div>
                 </div>
             </div>
