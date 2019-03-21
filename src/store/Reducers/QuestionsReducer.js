@@ -94,6 +94,10 @@ function QuestionsReducer(state={
           ...state,
           currentQuestion: action.data,
         }
+        case QuestionsAction.ADD_ANSWER:
+        console.log('reducer ',state.questions[action.data.id][action.data.option]);
+        state.questions[action.data.id][action.data.option].votes.push(action.data.author);
+        return state;
         default:
         return state;
     }

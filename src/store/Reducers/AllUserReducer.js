@@ -55,6 +55,20 @@ function AllUserReducer(state={
           ...state,
           usersAvatar,
         }
+        case AllUserActions.ADD_ANSWER:
+        console.log('state ',state)
+          state.users = state.users.map(user=>{
+            if(user.id === action.data.author){
+              const temp = user.answers;
+              user.answers = {
+                ...temp,
+                [action.data.quest]: action.data.option
+              }
+              console.log('updated ',user.answers);
+            }
+            return user;
+          })
+        return state;
         default:
         return state;
     }

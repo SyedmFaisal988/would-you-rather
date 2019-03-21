@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import './LeaderBoard.css';
 
 class LeaderBoard extends Component {
     state = {  }
     render() { 
         return ( 
-            <div>
-                LeaderBoard
+            <div className="lead-container">
+                <div className="lead-wrapper">
+                    LeaderBoard
+                </div>
             </div>
         );
     }

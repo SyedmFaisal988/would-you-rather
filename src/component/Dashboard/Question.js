@@ -29,7 +29,7 @@ class Question extends Component {
         // console.log('props ', this.props);
         return (
             <div className="quest">
-                <div className="question-header grey lighten-3">{data.name} ask</div>
+                <div className="question-header grey lighten-2">{data.name} ask</div>
                 <div className="question-body">
                     <div style={{backgroundImage: 'url("'+ data.avatarURL+'")'}} className="author-pic">
                     </div>

@@ -1,0 +1,12 @@
+.lead-container{
+    display: flex;
+    border: 1px solid red;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.lead-wrapper{
+    border: 5px solid green;
+    width: 50%;
+    
+}

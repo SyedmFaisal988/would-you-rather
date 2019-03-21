@@ -13,7 +13,10 @@ class Dashboard extends Component {
     }
     componentDidMount() {
         var instance = M.Tabs.init(document.querySelectorAll('.tabs'), {
-        },0);
+            duration: 500,
+        });
+        instance = M.Tabs.getInstance(document.querySelector('.tabs'));
+        instance.select('test-swipe-1');
         this.props.getAllUserAvatar();
         this.props.getUser();
         this.setState({

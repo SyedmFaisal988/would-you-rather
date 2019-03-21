@@ -74,7 +74,8 @@
 }
 
 .poll-answer>.progress-wrapper>.poll-progress{
-    background-color: #e0e0e0;
-    color: #26a69a;
-
+     color: #26a69a; 
+}
+.poll-answer>.progress-wrapper{
+    background-color: #4db6ac ;
 }
