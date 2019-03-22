@@ -3,6 +3,7 @@ import './NewQuestion.css';
 import QuestionsActions from '../../store/Actions/QuestionsActions';
 import UserActions from '../../store/Actions/UserActions';
 import { connect} from 'react-redux';
+import AllUserActions from '../../store/Actions/AllUserActions';
 
 class NewQuestion extends Component {
     state = {
@@ -20,13 +21,23 @@ class NewQuestion extends Component {
             rather: this.state.rather,
             author: this.props.currentUser[0].id,
         })
+        const temp = Object.keys(this.props.addedQuest.currentQuestion)
+        this.props.addQuestionUser({
+            id: this.props.currentUser[0].id,
+            quest: temp[0],
+        })
+        this.props.history.push('/');
+    }
+    static getDerivedStateFromProps(nextProps, prevState) {
+        console.log('new ',nextProps)
+        return nextProps
     }
     render() { 
         return ( 
             <div className="new-container"> 
                 <div className="new-wrapper z-depth-4">
                     <div className="new-header">
-                        <h2>Create New Question</h2>
+                        <h3>Create New Question</h3>
                     </div>
                     <div className="new-body">
                         <span className="new-align">Complete this question:</span>
@@ -37,7 +48,7 @@ class NewQuestion extends Component {
                                 <label className="active" htmlFor="first_name2">Would</label>
                             </div>
                         </div>
-                        <h3 className="new-align">OR</h3>
+                        <h5 className="new-align">OR</h5>
                         <div className="row">
                             <div className="input-field col s12">
                                 <input value={this.state.rather} onChange={this.changeHandler} id="first_name2" type="text" placeholder="Enter option Two" className="validate" name="rather" />
@@ -58,12 +69,14 @@ function mapDispatchToProps(dispatch){
     return{
         getUser: ()=>dispatch(UserActions.getUser()),
         addQuestion: (data)=>dispatch(QuestionsActions.addQuestion(data)),
+        addQuestionUser: (data)=>dispatch(AllUserActions.addQuestionUser(data)),
     }
 }
 
 function mapStateToProps(state){
     return({
         currentUser: state.UserReducer.currentUser,
+        addedQuest: state.QuestionsReducer,
     })
 }
  

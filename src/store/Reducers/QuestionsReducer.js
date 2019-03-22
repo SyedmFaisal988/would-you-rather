@@ -118,6 +118,8 @@ function QuestionsReducer(state={
             ...temp,
             [UID]: format,
           }
+          state.currentQuestion = { [UID]: format,}
+          console.log('reducer ', state);
         return state;
         default:
         return state;

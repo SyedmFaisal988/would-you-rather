@@ -25,6 +25,7 @@ class Details extends Component {
             option: this.state.value,
             id: this.props.question.id,
         }
+        console.log('submiting')
         this.props.addAnswer(data);
         this.props.addUserAnswer(data);
         this.props.history.push('/result');
@@ -65,11 +66,11 @@ class Details extends Component {
  
 function mapDispatchToProps(dispatch){
     return{
+        addUserAnswer: (data)=>dispatch(AllUserActions.addAnswer(data)),
         getCurrent: ()=>dispatch(QuestionsActions.getCurrent()),
         getUser: ()=>dispatch(UserActions.getUser()),
         getAllUserAvatar: ()=>dispatch(AllUserActions.getAllUserAvatar()),
         addAnswer: (data)=>dispatch(QuestionsActions.addAnswer(data)),
-        addUserAnswer: (data)=>dispatch(AllUserActions.addAnswer(data)),
     }
 }
 

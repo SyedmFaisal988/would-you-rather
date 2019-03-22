@@ -55,7 +55,17 @@ function AllUserReducer(state={
           ...state,
           usersAvatar,
         }
-        case AllUserActions.ADD_ANSWER:
+        case AllUserActions.ADD_QUESTION_USER:
+
+          state.users.map(user=>{
+            if(user.id === action.data.id){
+              user.questions.push(action.data.quest)
+            }
+            return user;
+          })
+          console.log(state);
+        return state;
+        case AllUserActions.ADD_USER_ANSWER:
         console.log('state ',state)
           state.users = state.users.map(user=>{
             if(user.id === action.data.author){
