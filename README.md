@@ -1,6 +1,9 @@
-<<<<<<< HEAD
-This is litle game application, using React and Redux.
+## Discription
+This is a little game application, using React and Redux, that let's you create and answer poll (of other users as well) and view its result.
 
+## Getting Application
+You can get binaries of this application by typing in your cmd/bash/terminal: git clone https://github.com/SyedmFaisal988/would-you-rather.git. Then go to cloned folder by typing cd would-yo-rather (or directly) and on cmd/bash/terminal write npm install. 
+  
 ## Available Scripts
 
 In the project directory, you can run:
